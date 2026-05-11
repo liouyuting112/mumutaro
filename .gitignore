@@ -1,4 +1,5 @@
-塔羅/node_modules/
-塔羅/.vite/
+node_modules/
+塔羅/
 .claude/
 *.py
+大眾占卜/圖片/
