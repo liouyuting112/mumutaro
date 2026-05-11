@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="姆姆塔羅 MUMU TAROU 水晶占卜 - TA 現在對我的想法？選一顆水晶，看看對方心裡藏著什麼秘密頻率。免費塔羅感情占卜。">
+<meta name="keywords" content="姆姆塔羅, MUMU TAROU, mumutarou, 水晶占卜, TA 對我的想法, 感情占卜, 大眾占卜, 塔羅占卜, 免費塔羅, 線上塔羅">
+<meta property="og:title" content="水晶占卜 - TA 現在對我的想法 | 姆姆塔羅 MUMU TAROU">
+<meta property="og:description" content="💜 選一顆水晶，看看對方心裡藏著什麼秘密頻率。免費感情占卜。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="姆姆塔羅 MUMU TAROU">
+<meta property="og:image" content="../images/crystal.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="水晶占卜 - TA 現在對我的想法">
+<meta name="twitter:description" content="選一顆水晶，看看對方心裡藏著什麼秘密頻率。">
+<meta name="theme-color" content="#2d1f3d">
+<title>水晶占卜 - TA 現在對我的想法 | 姆姆塔羅 MUMU TAROU</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1018;
+    --parchment: #f5ede0;
+    --gold: #c9a84c;
+    --gold-light: #e8cc7a;
+    --rose: #b5697a;
+    --sage: #7a9e87;
+    --lavender: #8b7aad;
+    --deep: #2d1f3d;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  
+  
+  .btn-outline-nav {
+    border: 1px solid rgba(255,255,255,0.3); padding: 9px 20px !important; border-radius: 30px; 
+    transition: all 0.3s ease !important; color: rgba(245,237,224,0.9) !important;
+  }
+  .btn-outline-nav:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+  /* ── 強化 CTA 按鈕 ── */
+  .btn-glow {
+    background: linear-gradient(135deg, var(--gold), #a07830);
+    color: #1a1018 !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-shadow: none;
+    box-shadow: 0 0 15px rgba(201,168,76,0.4);
+    transition: all 0.3s ease !important;
+    border: 1px solid #ffeaa7;
+  }
+  .btn-glow:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 25px rgba(201,168,76,0.7);
+  }
+
+  /* ── 常駐浮動按鈕 FAB ── */
+  .fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .fab-btn {
+    background: linear-gradient(135deg, #1a1028, #2d1f3d);
+    color: var(--gold-light);
+    border: 2px solid var(--gold);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    transition: all 0.3s;
+    animation: float 6s ease-in-out infinite;
+  }
+  .fab-btn:hover {
+    background: var(--gold);
+    color: #1a1018;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 25px rgba(201,168,76,0.6);
+  }
+  .fab-text {
+    background: rgba(10,5,20,0.8);
+    color: var(--gold-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    white-space: nowrap;
+  }
+
+  /* ── 圖片 SEO 化 ── */
+  .quiz-card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .quiz-card:hover .quiz-card-banner img {
+    transform: scale(1.1);
+  }
+
+  
+  /* ── 廣告系統樣式 ── */
+  #ad-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+  }
+  .ad-container {
+    background: #1a1018; border: 2px solid var(--gold); border-radius: 16px;
+    width: 90%; max-width: 320px; overflow: hidden; position: relative;
+    box-shadow: 0 10px 40px rgba(201,168,76,0.3);
+    animation: popupFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  @keyframes popupFadeIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .ad-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; background: rgba(201,168,76,0.15);
+    color: var(--gold-light); font-size: 0.85rem; letter-spacing: 0.1em;
+  }
+  #ad-close {
+    background: transparent; border: none; color: var(--gold-light); font-size: 1.5rem;
+    cursor: pointer; line-height: 1; margin-top: -2px;
+  }
+  .ad-content-wrap a { text-decoration: none; display: block; }
+  .ad-content-wrap img { width: 100%; display: block; }
+  .ad-desc {
+    padding: 12px 16px; color: var(--parchment); font-size: 0.95rem; text-align: center;
+    background: linear-gradient(to top, #1a1018, transparent); margin-top: -30px; position: relative;
+  }
+  .ad-footer {
+    text-align: center; padding: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .portal-ad-banner {
+    max-width: 1100px; margin: 0 auto 40px; display: block;
+    border-radius: 16px; overflow: hidden; border: 1px solid rgba(201,168,76,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .portal-ad-banner img { width: 100%; display: block; }
+  .portal-ad-banner:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+  /* ── 移除舊的常駐廣告區塊 CSS ── */
+  
+  
+  
+  
+  
+  @media(max-width: 768px) {
+    
+  }
+
+  /* ── Top Nav ── */
+  .top-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 32px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10,5,20,0.4); backdrop-filter: blur(8px);
+  }
+  .top-nav .logo {
+    font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 1.1rem; text-decoration: none; letter-spacing: 0.1em;
+  }
+  .top-nav-links { display: flex; gap: 20px; }
+  .top-nav-links a {
+    color: rgba(245,237,224,0.8); text-decoration: none; font-size: 0.9rem;
+    transition: color 0.3s; font-family: 'Noto Serif TC', serif;
+  }
+  .top-nav-links a:hover { color: var(--gold-light); }
+
+  /* ── Filter Bar ── */
+  .filter-bar {
+    max-width: 1100px; margin: 0 auto 40px; padding: 0 24px;
+    display: flex; flex-direction: column; gap: 20px; align-items: center;
+  }
+  .search-input {
+    width: 100%; max-width: 400px; padding: 12px 20px; border-radius: 30px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    color: var(--parchment); font-family: 'Noto Serif TC', serif; font-size: 0.95rem;
+    transition: border-color 0.3s; text-align: center;
+  }
+  .search-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.09); }
+  .filter-tabs {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  }
+  .filter-tab {
+    background: transparent; border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6); padding: 7px 20px; border-radius: 30px;
+    cursor: pointer; transition: all 0.3s; font-family: 'Noto Serif TC', serif; font-size: 0.9rem;
+  }
+  .filter-tab.active, .filter-tab:hover {
+    background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold-light);
+  }
+
+  /* ── Share Buttons ── */
+  .btn-share-line {
+    background: #06C755; color: white; border: none; padding: 9px 20px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; font-weight: bold;
+  }
+  .btn-share-line:hover { background: #05b34c; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6,199,85,0.3); }
+  .btn-share-threads {
+    background: #000000; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 9px 20px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; font-weight: bold;
+  }
+  .btn-share-threads:hover { background: #111; border-color: rgba(255,255,255,0.4); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,255,255,0.1); }
+
+  body {
+    background: var(--deep);
+    color: var(--parchment);
+    font-family: 'Noto Serif TC', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    cursor: default;
+  }
+
+  /* ── Stars background ── */
+  .stars {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(139,122,173,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(181,105,122,0.12) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(122,158,135,0.1) 0%, transparent 40%),
+      #1a1028;
+  }
+  .stars::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 25% 40%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 55% 55%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 70%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 5%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 15% 75%, rgba(255,255,255,0.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 45%, rgba(255,255,255,0.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 90%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 5% 95%, rgba(255,255,255,0.4) 0%, transparent 100%);
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  /* ── Page wrapper ── */
+  .page { position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  .hero {
+    text-align: center;
+    padding: 70px 20px 50px;
+    position: relative;
+  }
+  .hero-moon {
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 16px;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    letter-spacing: 0.15em;
+    color: var(--gold-light);
+    text-shadow: 0 0 30px rgba(201,168,76,0.5);
+    margin-bottom: 10px;
+  }
+  .hero-sub {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: rgba(245,237,224,0.65);
+    letter-spacing: 0.05em;
+    margin-bottom: 28px;
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    color: var(--gold); font-size: 0.85rem; letter-spacing: 0.2em;
+    margin-bottom: 14px;
+  }
+  .divider::before,.divider::after {
+    content:''; flex:1; max-width:120px;
+    height:1px; background: linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+
+  
+  
+  .btn-outline-nav {
+    border: 1px solid rgba(255,255,255,0.3); padding: 9px 20px !important; border-radius: 30px; 
+    transition: all 0.3s ease !important; color: rgba(245,237,224,0.9) !important;
+  }
+  .btn-outline-nav:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
+
+  /* ── 強化 CTA 按鈕 ── */
+  .btn-glow {
+    background: linear-gradient(135deg, var(--gold), #a07830);
+    color: #1a1018 !important;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-shadow: none;
+    box-shadow: 0 0 15px rgba(201,168,76,0.4);
+    transition: all 0.3s ease !important;
+    border: 1px solid #ffeaa7;
+  }
+  .btn-glow:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 0 25px rgba(201,168,76,0.7);
+  }
+
+  /* ── 常駐浮動按鈕 FAB ── */
+  .fab-container {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  .fab-btn {
+    background: linear-gradient(135deg, #1a1028, #2d1f3d);
+    color: var(--gold-light);
+    border: 2px solid var(--gold);
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+    transition: all 0.3s;
+    animation: float 6s ease-in-out infinite;
+  }
+  .fab-btn:hover {
+    background: var(--gold);
+    color: #1a1018;
+    transform: scale(1.1) translateY(-5px);
+    box-shadow: 0 6px 25px rgba(201,168,76,0.6);
+  }
+  .fab-text {
+    background: rgba(10,5,20,0.8);
+    color: var(--gold-light);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    pointer-events: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    white-space: nowrap;
+  }
+
+  /* ── 圖片 SEO 化 ── */
+  .quiz-card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .quiz-card:hover .quiz-card-banner img {
+    transform: scale(1.1);
+  }
+
+  
+  /* ── 廣告系統樣式 ── */
+  #ad-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+  }
+  .ad-container {
+    background: #1a1018; border: 2px solid var(--gold); border-radius: 16px;
+    width: 90%; max-width: 320px; overflow: hidden; position: relative;
+    box-shadow: 0 10px 40px rgba(201,168,76,0.3);
+    animation: popupFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  @keyframes popupFadeIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .ad-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; background: rgba(201,168,76,0.15);
+    color: var(--gold-light); font-size: 0.85rem; letter-spacing: 0.1em;
+  }
+  #ad-close {
+    background: transparent; border: none; color: var(--gold-light); font-size: 1.5rem;
+    cursor: pointer; line-height: 1; margin-top: -2px;
+  }
+  .ad-content-wrap a { text-decoration: none; display: block; }
+  .ad-content-wrap img { width: 100%; display: block; }
+  .ad-desc {
+    padding: 12px 16px; color: var(--parchment); font-size: 0.95rem; text-align: center;
+    background: linear-gradient(to top, #1a1018, transparent); margin-top: -30px; position: relative;
+  }
+  .ad-footer {
+    text-align: center; padding: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+  .portal-ad-banner {
+    max-width: 1100px; margin: 0 auto 40px; display: block;
+    border-radius: 16px; overflow: hidden; border: 1px solid rgba(201,168,76,0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .portal-ad-banner img { width: 100%; display: block; }
+  .portal-ad-banner:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+
+  /* ── 移除舊的常駐廣告區塊 CSS ── */
+  
+  
+  
+  
+  
+  @media(max-width: 768px) {
+    
+  }
+
+  /* ── Top Nav ── */
+  .top-nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 32px; border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10,5,20,0.4); backdrop-filter: blur(8px);
+  }
+  .top-nav .logo {
+    font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 1.1rem; text-decoration: none; letter-spacing: 0.1em;
+  }
+  .top-nav-links { display: flex; gap: 20px; }
+  .top-nav-links a {
+    color: rgba(245,237,224,0.8); text-decoration: none; font-size: 0.9rem;
+    transition: color 0.3s; font-family: 'Noto Serif TC', serif;
+  }
+  .top-nav-links a:hover { color: var(--gold-light); }
+
+  /* ── Filter Bar ── */
+  .filter-bar {
+    max-width: 1100px; margin: 0 auto 40px; padding: 0 24px;
+    display: flex; flex-direction: column; gap: 20px; align-items: center;
+  }
+  .search-input {
+    width: 100%; max-width: 400px; padding: 12px 20px; border-radius: 30px;
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.15);
+    color: var(--parchment); font-family: 'Noto Serif TC', serif; font-size: 0.95rem;
+    transition: border-color 0.3s; text-align: center;
+  }
+  .search-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.09); }
+  .filter-tabs {
+    display: flex; gap: 12px; flex-wrap: wrap; justify-content: center;
+  }
+  .filter-tab {
+    background: transparent; border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.6); padding: 7px 20px; border-radius: 30px;
+    cursor: pointer; transition: all 0.3s; font-family: 'Noto Serif TC', serif; font-size: 0.9rem;
+  }
+  .filter-tab.active, .filter-tab:hover {
+    background: rgba(201,168,76,0.15); border-color: var(--gold); color: var(--gold-light);
+  }
+
+  /* ── Share Buttons ── */
+  .btn-share-line {
+    background: #06C755; color: white; border: none; padding: 9px 20px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; font-weight: bold;
+  }
+  .btn-share-line:hover { background: #05b34c; transform: translateY(-2px); box-shadow: 0 4px 15px rgba(6,199,85,0.3); }
+  .btn-share-threads {
+    background: #000000; color: white; border: 1px solid rgba(255,255,255,0.2); padding: 9px 20px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem; cursor: pointer; transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 6px; font-weight: bold;
+  }
+  .btn-share-threads:hover { background: #111; border-color: rgba(255,255,255,0.4); transform: translateY(-2px); box-shadow: 0 4px 15px rgba(255,255,255,0.1); }
+
+
+  /* ── Quiz grid ── */
+  .quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 28px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── Quiz card ── */
+  .quiz-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+  }
+  .quiz-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+  }
+  .quiz-card-banner {
+    height: 130px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    position: relative; overflow: hidden;
+  }
+  .quiz-card-body { padding: 22px 24px 24px; }
+  .quiz-card-tag {
+    font-size: 0.7rem; letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 8px;
+    opacity: 0.7;
+  }
+  .quiz-card-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.05rem;
+    color: var(--parchment);
+    margin-bottom: 10px;
+    line-height: 1.4;
+  }
+  .quiz-card-desc {
+    font-family: 'Crimson Text', serif;
+    font-size: 0.95rem;
+    color: rgba(245,237,224,0.6);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .quiz-card-cta {
+    display: inline-block;
+    font-size: 0.8rem; letter-spacing: 0.15em;
+    padding: 7px 18px;
+    border-radius: 30px;
+    border: 1px solid;
+    transition: all 0.25s;
+  }
+  .quiz-card:hover .quiz-card-cta {
+    padding-right: 22px;
+  }
+
+  /* ── Result Follow CTA ── */
+  .result-follow-cta {
+    margin-top: 24px; padding: 16px; border-radius: 12px;
+    background: rgba(201,168,76,0.08); border: 1px solid rgba(201,168,76,0.2);
+    text-align: center; font-family: 'Noto Serif TC', serif;
+  }
+  .result-follow-cta p { font-size: 0.9rem; color: var(--gold-light); margin-bottom: 8px; }
+  .result-follow-cta a { color: #fff; text-decoration: none; font-weight: bold; border-bottom: 1px solid rgba(255,255,255,0.4); transition: all 0.2s; }
+  .result-follow-cta a:hover { color: var(--gold); border-color: var(--gold); }
+
+  /* ── 結果頁 CTA 按鈕響應式強化 ── */
+  .result-follow-cta a {
+    display: inline-block;
+    max-width: 100%;
+    padding: 8px 18px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--gold), #a07830);
+    color: #1a1018 !important;
+    border-bottom: none !important;
+    font-weight: 700;
+    margin-top: 4px;
+    word-break: keep-all;
+    line-height: 1.5;
+    transition: all 0.25s;
+  }
+  .result-follow-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(201,168,76,0.5);
+    color: #1a1018 !important;
+    border-color: transparent !important;
+  }
+  @media (max-width: 480px) {
+    .result-follow-cta { padding: 12px 10px; }
+    .result-follow-cta p { font-size: 0.85rem; }
+    .result-follow-cta a { font-size: 0.88rem; padding: 8px 14px; }
+  }
+
+  /* ── 看更多占卜 ── */
+  .result-explore {
+    margin-top: 22px; padding: 18px 0 4px;
+    border-top: 1px dashed rgba(255,255,255,0.12);
+  }
+  .explore-title {
+    text-align: center; font-family: 'Cinzel', serif;
+    color: var(--gold-light); font-size: 0.88rem; letter-spacing: 0.22em;
+    margin-bottom: 14px;
+  }
+  .explore-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  }
+  .explore-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 14px 14px;
+    border-radius: 12px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.28);
+    text-decoration: none;
+    color: var(--parchment);
+    font-size: 0.92rem;
+    transition: all 0.25s ease;
+  }
+  .explore-item:hover {
+    background: rgba(201,168,76,0.16);
+    border-color: rgba(201,168,76,0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 14px rgba(201,168,76,0.2);
+  }
+  .explore-emoji { font-size: 1.4rem; flex-shrink: 0; }
+  .explore-text { flex: 1; line-height: 1.3; }
+  .explore-arrow { color: var(--gold-light); font-weight: bold; transition: transform 0.25s; }
+  .explore-item:hover .explore-arrow { transform: translateX(4px); }
+  @media(max-width: 480px) {
+    .explore-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── Modal overlay ── */
+  .modal-overlay {
+    display: none;
+    position: fixed; inset: 0; z-index: 100;
+    background: rgba(10,5,20,0.88);
+    backdrop-filter: blur(8px);
+    overflow-y: auto;
+    padding: 30px 16px 60px;
+  }
+  .modal-overlay.active { display: block; animation: fadeIn 0.3s ease; }
+  @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+  .modal {
+    max-width: 720px; margin: 0 auto;
+    background: rgba(30,18,50,0.95);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    overflow: hidden;
+    animation: slideUp 0.35s cubic-bezier(0.16,1,0.3,1);
+  }
+  @keyframes slideUp { from{transform:translateY(30px);opacity:0} to{transform:none;opacity:1} }
+
+  .modal-header {
+    padding: 32px 32px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    position: relative;
+  }
+  .modal-tag {
+    font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .modal-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+    color: var(--parchment);
+    line-height: 1.3;
+    margin-bottom: 10px;
+  }
+  .modal-subtitle {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(245,237,224,0.55);
+    font-size: 1rem;
+  }
+  .modal-close {
+    position: absolute; top: 20px; right: 20px;
+    background: none; border: none; color: rgba(255,255,255,0.4);
+    font-size: 1.5rem; cursor: pointer; width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; transition: all 0.2s;
+  }
+  .modal-close:hover { background: rgba(255,255,255,0.1); color: white; }
+
+  .modal-body { padding: 32px; }
+  .modal-question {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.2rem;
+    color: var(--parchment);
+    text-align: center;
+    margin-bottom: 32px;
+    line-height: 1.7;
+  }
+
+  /* ── Card pick grid ── */
+  .cards-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .pick-card {
+    width: 110px;
+    cursor: pointer;
+    text-align: center;
+    transition: transform 0.25s;
+  }
+  .pick-card:hover { transform: translateY(-8px) rotate(-2deg); }
+  .pick-card.selected { transform: translateY(-12px) scale(1.05); }
+  .pick-card-face {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+    background-size: cover !important;
+    background-position: center !important;
+    color: transparent;
+  }
+  .pick-card.selected .pick-card-face {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+    background-size: cover !important;
+    background-position: center !important;
+    color: transparent;
+  }
+  .pick-card-label {
+    font-size: 0.75rem; letter-spacing: 0.05em;
+    color: rgba(245,237,224,0.55);
+  }
+  .pick-card.selected .pick-card-label { color: var(--gold-light); }
+
+  /* ── Result box ── */
+  .result-box {
+    display: none;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px;
+    padding: 28px 24px;
+    animation: fadeIn 0.5s ease;
+  }
+  .result-box.visible { display: block; }
+  .result-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .result-card-name {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+    opacity: 0.65;
+  }
+  .result-text {
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: rgba(245,237,224,0.85);
+  }
+  .result-tarot-note {
+    margin-top: 18px;
+    padding-top: 18px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    font-size: 0.85rem;
+    color: rgba(245,237,224,0.5);
+    font-style: italic;
+  }
+
+  .modal-footer {
+    padding: 0 24px 28px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 8px;
+  }
+  .modal-footer > * {
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+  }
+  .btn-reset {
+    background: none; border: 1px solid rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.5); padding: 9px 20px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem;
+    cursor: pointer; transition: all 0.2s;
+  }
+  .btn-reset:hover { border-color: rgba(255,255,255,0.4); color: white; }
+  .btn-tarot {
+    background: linear-gradient(135deg, var(--gold), #a07830);
+    border: none; color: #1a1018; padding: 9px 22px; border-radius: 30px;
+    font-family: 'Noto Serif TC', serif; font-size: 0.8rem; font-weight: 700;
+    cursor: pointer; transition: all 0.2s; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-tarot:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.35); }
+
+  /* ── Footer ── */
+  footer {
+    text-align: center;
+    padding: 30px 20px 50px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(245,237,224,0.3);
+    font-size: 0.9rem;
+  }
+  footer a { color: var(--gold); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* shimmer on banners */
+  .quiz-card-banner::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg,rgba(255,255,255,0.08) 0%,transparent 60%);
+  }
+  .banner-emoji { position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); }
+
+  @media(max-width:480px) {
+    .pick-card { width: 86px; }
+    .pick-card-face {
+    width: 100%;
+    height: 160px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3.5rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    border: 2px solid transparent;
+    background-size: cover !important;
+    background-position: center !important;
+    color: transparent;
+  }
+    .modal-body { padding: 20px 16px; }
+    .modal-header { padding: 24px 16px 18px; }
+    .modal-footer { padding: 0 16px 24px; justify-content: center; }
+    .top-nav { flex-direction: column; gap: 12px; padding: 16px; }
+  }
+
+    .hero, .filter-bar, .quiz-grid, .portal-ad-banner, footer, .fab-container { display: none !important; }
+    #modalOverlay { position: relative; background: transparent; backdrop-filter: none; display: flex !important; pointer-events: auto; opacity: 1; visibility: visible; }
+    .modal { margin-top: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+    .modal-close { display: none; } /* Hide close button */
+    .page { min-height: auto; }
+    body { overflow-y: auto !important; }
+
+  /* Quiz 頁專屬品牌條（補上方空白） */
+  .brand-strip {
+    max-width: 720px; margin: 24px auto 0; padding: 18px 22px;
+    display: flex; align-items: center; gap: 16px;
+    background: linear-gradient(135deg, rgba(201,168,76,0.08), rgba(139,122,173,0.06));
+    border: 1px solid rgba(201,168,76,0.22);
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.15);
+  }
+  .brand-strip-icon { font-size: 2rem; flex-shrink: 0; filter: drop-shadow(0 0 12px rgba(201,168,76,0.4)); }
+  .brand-strip-text { flex: 1; min-width: 0; }
+  .brand-strip-name { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 1.05rem; letter-spacing: 0.12em; font-weight: 700; }
+  .brand-strip-slogan { font-family: 'Crimson Text', serif; font-style: italic; color: rgba(245,237,224,0.65); font-size: 0.88rem; margin-top: 3px; }
+  @media (max-width: 480px) {
+    .brand-strip { margin: 16px 14px 0; padding: 14px 16px; gap: 12px; }
+    .brand-strip-icon { font-size: 1.6rem; }
+    .brand-strip-name { font-size: 0.95rem; }
+    .brand-strip-slogan { font-size: 0.8rem; }
+  }
+
+  /* Empty state */
+  .empty-state { display: none; text-align: center; padding: 60px 20px; margin: 0 auto 40px; max-width: 540px; }
+  .empty-state.visible { display: block; animation: fadeIn 0.4s ease; }
+  .empty-icon { font-size: 3rem; margin-bottom: 14px; opacity: 0.85; }
+  .empty-title { font-family: 'Cinzel', serif; color: var(--gold-light); font-size: 1.2rem; letter-spacing: 0.1em; margin-bottom: 10px; }
+  .empty-desc { color: rgba(245,237,224,0.6); font-size: 0.95rem; line-height: 1.7; }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<!-- FAB -->
+<div class="fab-container">
+  <div class="fab-text">免費解牌</div>
+  <a href="https://tarot-reading.mixytalk.com/" target="_blank" class="fab-btn" title="線上免費解牌">🔮</a>
+</div>
+
+
+<main class="page">
+
+  <!-- Top Nav -->
+  <nav class="top-nav">
+    <a href="divination.html" class="logo">姆姆塔羅 MUMU TAROU</a>
+    <div class="top-nav-links">
+      <a href="daily.html" class="btn-outline-nav">🌙 每日運勢</a>
+      <a href="https://tarot-reading.mixytalk.com/" target="_blank" class="btn-glow">✦ 線上免費解牌</a>
+    </div>
+  </nav>
+
+  <!-- 品牌條（quiz 頁專用，補上方空白） -->
+  <div class="brand-strip">
+    <span class="brand-strip-icon">🔮</span>
+    <div class="brand-strip-text">
+      <div class="brand-strip-name">姆姆塔羅 MUMU TAROU</div>
+      <div class="brand-strip-slogan">每一張牌，都是宇宙給你的悄悄話</div>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="hero-moon">🌙</span>
+    <h1>姆姆塔羅 MUMU TAROU</h1>
+    <p class="hero-sub">每一張牌，都是宇宙給你的悄悄話</p>
+    <div class="divider">✦ 大眾占卜入口 ✦</div>
+    <div style="margin-top: 20px;">
+      <a href="https://tarot-reading.mixytalk.com/" target="_blank" class="btn-glow" style="font-size:1.1rem; padding: 12px 36px; display:inline-block;">🔮 去線上解牌</a>
+    </div>
+  </header>
+
+  
+  
+
+  <!-- Filter section -->
+  <div class="filter-bar">
+    <input type="text" id="searchInput" class="search-input" placeholder="搜尋占卜主題..." oninput="filterQuizzes()">
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="setCategory('all')">全部</button>
+      <button class="filter-tab" onclick="setCategory('love')">感情</button>
+      <button class="filter-tab" onclick="setCategory('fortune')">運勢</button>
+      <button class="filter-tab" onclick="setCategory('wealth')">財運</button>
+      <button class="filter-tab" onclick="setCategory('spiritual')">自我探索</button>
+    </div>
+  </div>
+
+  <section class="quiz-grid" id="quizGrid">
+
+    <!-- 1: Luckmoney — 偏財運（最新位置） -->
+    <article class="quiz-card" data-category="wealth" onclick="window.location.href='quiz_luckmoney.html'">
+      <div class="quiz-card-banner"><img src="../images/luckmoney.png" alt="偏財運占卜 - 近期是否有偏財運"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#90d490;">🎰 偏財運占卜</div>
+        <div class="quiz-card-title">近期是否有偏財運</div>
+        <div class="quiz-card-desc">選一個幸運物件，看看你近期的偏財能量。</div>
+        <div class="quiz-card-cta" style="border-color:#3a8a4a; color:#90d490;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 2: Inner — 內在能量原型 -->
+    <article class="quiz-card" data-category="spiritual" onclick="window.location.href='quiz_inner.html'">
+      <div class="quiz-card-banner"><img src="../images/inner.png" alt="內在能量原型 - 自我探索"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#d8c4f5;">✨ 內在能量</div>
+        <div class="quiz-card-title">你的內在能量原型</div>
+        <div class="quiz-card-desc">跟著心，看看哪一種元素最像現在的你。</div>
+        <div class="quiz-card-cta" style="border-color:#a78bfa; color:#d8c4f5;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 2: Daily Tarot — 每日運勢占卜（固定第二位） -->
+    <article class="quiz-card" data-category="fortune" onclick="window.location.href='daily.html'">
+      <div class="quiz-card-banner"><img src="../images/card_19.jpg" alt="每日運勢占卜 - 78 張塔羅每日抽牌"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#ffd700;">🌙 每日塔羅</div>
+        <div class="quiz-card-title">每日運勢占卜</div>
+        <div class="quiz-card-desc">78 張塔羅每天為你抽一張，含愛情・事業・財運・幸運色。</div>
+        <div class="quiz-card-cta" style="border-color:#c9a84c; color:#ffd700;">立即抽牌 →</div>
+      </div>
+    </article>
+
+    <!-- 3: Wealth — 財運 -->
+    <article class="quiz-card" data-category="wealth" onclick="window.location.href='quiz_wealth.html'">
+      <div class="quiz-card-banner"><img src="../images/wealth.png" alt="財運占卜 - 近期財運走向"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#ffd700;">💰 財運占卜</div>
+        <div class="quiz-card-title">近期整體財運</div>
+        <div class="quiz-card-desc">選一個財富物件，看看你近期的財運走向。</div>
+        <div class="quiz-card-cta" style="border-color:#c0a020; color:#ffd700;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 4: Crystal — TA 現在對我的想法 -->
+    <article class="quiz-card" data-category="love" onclick="openQuiz('crystal')">
+      <div class="quiz-card-banner"><img src="../images/crystal.png" alt="水晶占卜 - TA 現在對我的想法"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#c4b5fd;">💜 水晶占卜</div>
+        <div class="quiz-card-title">TA 現在對我的想法</div>
+        <div class="quiz-card-desc">選一顆水晶，看看對方心裡藏著什麼秘密頻率。</div>
+        <div class="quiz-card-cta" style="border-color:#8b5cf6; color:#c4b5fd;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 2: Cat — 近期感情走向 -->
+    <article class="quiz-card" data-category="love" data-latest="false" onclick="openQuiz('cat')">
+      <div class="quiz-card-banner"><img src="../images/cat.png" alt="貓咪占卜 - 近期感情走向"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#f8bbd9;">貓咪占卜</div>
+        <div class="quiz-card-title">近期感情走向</div>
+        <div class="quiz-card-desc">讓貓咪告訴你，愛情的下一步會往哪裡走。</div>
+        <div class="quiz-card-cta" style="border-color:#f06292; color:#f8bbd9;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 3: Moon — 對方還有心嗎 -->
+    <article class="quiz-card" data-category="love" data-latest="false" onclick="openQuiz('moon')">
+      <div class="quiz-card-banner"><img src="../images/moon.png" alt="月相占卜 - 對方還有心嗎"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#b8d4f0;">月相占卜</div>
+        <div class="quiz-card-title">對方還有心嗎？</div>
+        <div class="quiz-card-desc">月亮映出真實，選一個月相讀取對方的情感能量。</div>
+        <div class="quiz-card-cta" style="border-color:#4a8aba; color:#b8d4f0;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 4: Flower — 這段關係的未來 -->
+    <article class="quiz-card" data-category="love" data-latest="false" onclick="openQuiz('flower')">
+      <div class="quiz-card-banner"><img src="../images/flower.png" alt="花草占卜 - 這段關係的未來"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#d4f0b8;">花草占卜</div>
+        <div class="quiz-card-title">這段關係的未來</div>
+        <div class="quiz-card-desc">大地的智慧從不說謊，選一株植物看見緣分的走向。</div>
+        <div class="quiz-card-cta" style="border-color:#8aba4a; color:#d4f0b8;">選牌 →</div>
+      </div>
+    </article>
+
+    <!-- 5: Fire — 近期運勢能量 -->
+    <article class="quiz-card" data-category="fortune" data-latest="false" onclick="openQuiz('fire')">
+      <div class="quiz-card-banner"><img src="../images/fire.png" alt="蠟燭占卜 - 近期整體運勢能量"></div>
+      <div class="quiz-card-body">
+        <div class="quiz-card-tag" style="color:#f5c080;">蠟燭占卜</div>
+        <div class="quiz-card-title">近期整體運勢能量</div>
+        <div class="quiz-card-desc">火焰照亮未知，選一根蠟燭感知你此刻的能量頻率。</div>
+        <div class="quiz-card-cta" style="border-color:#e06020; color:#f5c080;">選牌 →</div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Empty state -->
+  <div class="empty-state" id="emptyState">
+    <div class="empty-icon">✨</div>
+    <div class="empty-title">此分類持續更新中</div>
+    <div class="empty-desc">敬請期待更多有趣的占卜！</div>
+  </div>
+
+  <!-- 常駐廣告 (Portal Banner) -->
+  <a href="javascript:void(0)" onclick="if(window.getAdUrl) window.open(window.getAdUrl('portal_banner'), '_blank')" class="portal-ad-banner">
+    <img src="../images/banner.png" alt="玩星派對">
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    想更深入解讀？歡迎找
+    <a href="https://www.threads.net/@meow_taro" target="_blank">@meow_taro</a>
+    算塔羅 🐾 &nbsp;·&nbsp; 占卜僅供娛樂，請以輕鬆心情參考 ✨
+  </footer>
+</main>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal" id="modal">
+    <div class="modal-header" id="modalHeader">
+      <div class="modal-tag" id="modalTag"></div>
+      <div class="modal-title" id="modalTitle"></div>
+      <div class="modal-subtitle" id="modalSubtitle"></div>
+      <button class="modal-close" onclick="closeQuiz()">✕</button>
+    </div>
+    <div class="modal-body">
+      <p class="modal-question" id="modalQuestion"></p>
+      <div class="cards-row" id="cardsRow"></div>
+      <div class="result-box" id="resultBox">
+        <div class="result-title" id="resultTitle"></div>
+        <div class="result-card-name" id="resultCardName"></div>
+        <div class="result-text" id="resultText"></div>
+        <div class="result-tarot-note" id="resultTarotNote"></div>
+
+        <!-- 看更多占卜 -->
+        <div class="result-explore">
+          <div class="explore-title">✦ 試試其他占卜 ✦</div>
+          <div class="explore-grid">
+            <a href="daily.html" class="explore-item">
+              <span class="explore-emoji">🌙</span>
+              <span class="explore-text">每日運勢占卜</span>
+              <span class="explore-arrow">→</span>
+            </a>
+            <a href="divination.html" class="explore-item">
+              <span class="explore-emoji">🔮</span>
+              <span class="explore-text">看所有占卜</span>
+              <span class="explore-arrow">→</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Result CTA → 線上免費解牌 -->
+        <div class="result-follow-cta">
+          <p>✦ 想要更詳細的解讀？ ✦</p>
+          <a href="https://tarot-reading.mixytalk.com/?utm_source=MassTarot&utm_medium=display&utm_campaign=mega_traffic_2026&utm_content=result_cta" target="_blank" rel="noopener noreferrer">🔮 詳細問題：線上免費解牌 →</a>
+        </div>
+      </div>
+    </div>
+    
+    <div style="padding: 0 32px 16px;">
+      <a href="javascript:void(0)" onclick="if(window.getAdUrl) window.open(window.getAdUrl('result_banner'), '_blank')" style="display:block; border-radius:14px; overflow:hidden; border:1px solid rgba(201,168,76,0.3);">
+        <img src="../images/banner.png" alt="玩星派對" style="width:100%; display:block;">
+      </a>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-reset" onclick="resetPick()">↺ 重新選牌</button>
+      <button class="btn-share-line" onclick="shareLine()">💬 分享至 LINE</button>
+      <button class="btn-share-threads" onclick="shareThreads()">🧵 分享至 Threads</button>
+    </div>
+  </div>
+</div>
+
+<script>
+
+/* Ad System Logic - Mode B: Single Banner (Standard) */
+(function() {
+    const AD_CONFIG = {
+        utmSource: 'MassTarot',
+        utmCampaign: 'mega_traffic_2026',
+        initDelay: 2000, cooldown: 20000,
+        ads: [{ url: 'https://www.gametower.com.tw/Action/partygo/mixytalk0416/index.html', img: '../images/ad_starparty.png' }]
+    };
+    
+    window.getAdUrl = function(utmContent) {
+        const ad = AD_CONFIG.ads[0];
+        const sep = ad.url.indexOf('?') === -1 ? '?' : '&';
+        return ad.url + sep + 'utm_source=' + AD_CONFIG.utmSource + '&utm_medium=display&utm_campaign=' + AD_CONFIG.utmCampaign + '&utm_content=' + (utmContent || '1st_banner');
+    };
+
+    window.scheduleAd = function() {
+        const now = Date.now();
+        const last = parseInt(sessionStorage.getItem('last_ad_time') || '0');
+        if (now - last < AD_CONFIG.cooldown) return;
+        if (document.getElementById('ad-overlay')) return;
+        setTimeout(showAd, AD_CONFIG.initDelay);
+    };
+
+    function showAd() {
+        sessionStorage.setItem('last_ad_time', Date.now().toString());
+        const ad = AD_CONFIG.ads[0];
+        const overlay = document.createElement('div');
+        overlay.id = 'ad-overlay';
+        overlay.innerHTML = `
+            <div class="ad-container">
+                <div class="ad-header"><span>🎁 玩星派對</span><button id="ad-close">×</button></div>
+                <div class="ad-content-wrap">
+                    <div class="ad-slide active">
+                        <a href="${window.getAdUrl('popup_banner')}" target="_blank">
+                            <img src="${ad.img}" alt="玩星派對">
+                            <div class="ad-desc">iPhone買不到？完成電話驗證 等你免費抽回家</div>
+                        </a>
+                    </div>
+                </div>
+                <div class="ad-footer">點擊右上角 × 關閉</div>
+            </div>`;
+        document.body.appendChild(overlay);
+        const close = () => { if(overlay.parentNode) overlay.remove(); };
+        document.getElementById('ad-close').onclick = close;
+        overlay.onclick = (e) => { if(e.target===overlay) close(); };
+    }
+})();
+
+const QUIZZES = {
+  luckmoney: {
+    tag: '🎰 偏財運占卜',
+    title: '近期是否有偏財運',
+    subtitle: '不要想太多，憑直覺選一個',
+    question: '閉上眼，想著你期待的好運，哪個物件先浮現？\n直覺選擇，就是答案 🎰',
+    cards: [
+      { img: '../images/luckmoney_clover.png', name: '四葉草', bg: 'linear-gradient(160deg,#1a4a1a,#4a9a4a)' },
+      { img: '../images/luckmoney_dice.png', name: '骰子', bg: 'linear-gradient(160deg,#3a1a2a,#8a4060)' },
+      { img: '../images/luckmoney_toad.png', name: '金蟾', bg: 'linear-gradient(160deg,#4a1010,#c04020)' },
+      { img: '../images/luckmoney_star.png', name: '流星', bg: 'linear-gradient(160deg,#1a1a4a,#5a4a9a)' },
+      { img: '../images/luckmoney_gem.png', name: '寶石', bg: 'linear-gradient(160deg,#3a2010,#c0a020)' },
+    ],
+    results: [
+      { title: '🍀 四葉草 — 純粹的幸運', tarotRef: '對應大阿爾卡納：命運之輪（Wheel of Fortune）', text: '近期有「天時」站在你這邊 — 不需要你刻意做什麼，好運會自然送上門。可能是中獎、抽中、意外退款，或一個本來沒抱期待的事突然有好消息。命運之輪正在為你轉動，重點不是用力推它，是學會優雅地接住降臨的禮物。', tarotNote: '命運之輪象徵運氣的循環，這次輪到你站在好的那一面。' },
+      { title: '🎲 骰子 — 主動爭取的幸運', tarotRef: '對應大阿爾卡納：戰車（The Chariot）', text: '近期的偏財運偏「動手才有」型 — 不是天上掉下來的，而是你主動投入、認真嘗試後才會有的。可能是抽獎活動、競賽、面試、提案、或某個你需要爭取的機會。戰車告訴你：敢出手的人，骰子才會轉到他這邊。', tarotNote: '戰車象徵意志與行動，你的主動就是偏財的引信。' },
+      { title: '🐸 金蟾 — 物質禮物降臨', tarotRef: '對應大阿爾卡納：錢幣王牌（Ace of Pentacles）', text: '近期有具體的物質好運在路上 — 可能是紅包、禮物、加薪、退稅、意外的金錢入帳。錢幣王牌是「天降禮物」的牌，重點不是它一定多大，是你要打開手心去接。今天適合對任何「免費」或「贈送」的東西保持開放，可能藏著你的偏財。', tarotNote: '錢幣王牌是宇宙遞給你的物質種子，種下就會長。' },
+      { title: '🌠 流星 — 願望實現的能量', tarotRef: '對應大阿爾卡納：星星（The Star）', text: '近期的偏財運帶著「願望實現」的色彩 — 你長期默默期待的某件事，可能會以你想不到的方式發生。不一定是中大獎，更可能是「剛好需要的時候剛好有」這種神奇巧合。星星牌提醒你：相信宇宙的時機，許下的願會回應你。', tarotNote: '星星象徵希望與真實的願望，許了願就放下，宇宙會處理時機。' },
+      { title: '💎 寶石 — 意外發現的好運', tarotRef: '對應大阿爾卡納：太陽（The Sun）', text: '近期會有「意外發現」型的偏財 — 翻舊抽屜找到忘記的錢、整理衣櫃發現未拆封禮物、二手店挖到寶、舊投資突然增值。太陽牌是純粹喜悅的能量，重點不是金額多大，是你會被那個「哇」的瞬間照亮一天。多留意身邊容易被忽略的小角落。', tarotNote: '太陽象徵照亮一切的喜悅，你的好運就藏在你已經有的東西裡。' },
+    ],
+  },
+
+  inner: {
+    tag: '✨ 內在能量原型',
+    title: '你的內在能量原型',
+    subtitle: '跟著心，看看哪一種元素最像現在的你',
+    question: '閉上眼想想你最近的狀態，哪個元素第一眼吸引你？\n直覺選擇，就是答案 ✨',
+    cards: [
+      { img: '../images/inner_fire.png', name: '火焰', bg: 'linear-gradient(160deg,#4a1010,#c04020)' },
+      { img: '../images/inner_water.png', name: '水滴', bg: 'linear-gradient(160deg,#1a3a4a,#4a8aba)' },
+      { img: '../images/inner_wood.png', name: '樹葉', bg: 'linear-gradient(160deg,#1a4a1a,#4a9a4a)' },
+      { img: '../images/inner_air.png', name: '羽毛', bg: 'linear-gradient(160deg,#3a3a5a,#9090c0)' },
+      { img: '../images/inner_earth.png', name: '礦石', bg: 'linear-gradient(160deg,#2a1a3a,#7a5a9a)' },
+    ],
+    results: [
+      { title: '🔥 火焰 — 熱情主動的能量', tarotRef: '對應宮廷牌：權杖王后（Queen of Wands）', text: '你現在內在的核心能量是「火」— 熱情、行動力、敢於做自己。最近你會發現，當你主動採取行動時，事情都比想像中順利。你不需要等別人允許，你的天賦就是「點燃」事情。但要記得：火需要氧氣才能燒久，給自己留休息的空間，別把自己燒乾。', tarotNote: '權杖王后代表自信主動的火能量，你的魅力就是真實做自己。' },
+      { title: '💧 水滴 — 流動深層的能量', tarotRef: '對應宮廷牌：聖杯王后（Queen of Cups）', text: '你現在內在的核心能量是「水」— 感性、直覺、能感受到別人沒察覺的細節。最近你的同理心特別準，看人會看得很透。建議多相信你的「不對勁感」，那是真的訊號。同時也要照顧自己的情緒，水太滿會溢出來。', tarotNote: '聖杯王后象徵情感深度，你的溫柔是這世界少有的奢侈。' },
+      { title: '🌳 樹葉 — 成長扎根的能量', tarotRef: '對應大阿爾卡納:皇后（The Empress）', text: '你現在內在的核心能量是「木」— 生命力、滋養、穩定地往上長。最近你像個花園 — 種什麼都會發芽，照顧的人事物都會回應你。你最大的天賦是「讓事情活起來」。但記得自己也需要被滋養，給予的同時也要接收。', tarotNote: '皇后牌象徵豐盛與滋養，你的存在本身就是禮物。' },
+      { title: '🪶 羽毛 — 自由清明的能量', tarotRef: '對應大阿爾卡納：愚者（The Fool）', text: '你現在內在的核心能量是「風」— 自由、好奇、敢於跳出框架。最近你可能對什麼都好奇，對固定的事感到無聊。這不是缺點，是你的天賦提示你「該換新方向」了。試著相信自己的輕盈，重的東西可以放下，世界比你想的寬。', tarotNote: '愚者牌象徵勇敢冒險的純真，你心裡的自由比任何束縛強大。' },
+      { title: '🪨 礦石 — 穩定踏實的能量', tarotRef: '對應宮廷牌：錢幣王后（Queen of Pentacles）', text: '你現在內在的核心能量是「土」— 穩定、踏實、把抽象的事顯化成具體。最近你會發現別人在你身邊感到安心，因為你像個錨。你的天賦是「把日子過好」— 把理想變成日常，把概念變成可摸到的東西。這是現代最稀缺的能力。', tarotNote: '錢幣王后象徵把豐盛活成日常，你的穩定是無價的。' },
+    ],
+  },
+
+  wealth: {
+    tag: '💰 財運占卜',
+    title: '近期整體財運',
+    subtitle: '靜下心，讓直覺帶你選一個物件',
+    question: '閉上眼想著錢的事，哪個物件第一眼吸引你？\n直覺選擇，就是答案 💰',
+    cards: [
+      { img: '../images/wealth_coin.png', name: '金幣', bg: 'linear-gradient(160deg,#3a2010,#c0a020)' },
+      { img: '../images/wealth_bill.png', name: '鈔票', bg: 'linear-gradient(160deg,#2a3a2a,#7a9e87)' },
+      { img: '../images/wealth_chest.png', name: '寶箱', bg: 'linear-gradient(160deg,#3a1a1a,#8a4040)' },
+      { img: '../images/wealth_key.png', name: '鑰匙', bg: 'linear-gradient(160deg,#3a2a1a,#a08050)' },
+      { img: '../images/wealth_tree.png', name: '錢樹', bg: 'linear-gradient(160deg,#1a3a1a,#4a8a4a)' },
+    ],
+    results: [
+      { title: '🪙 金幣 — 新財富的開始', tarotRef: '對應大阿爾卡納：錢幣王牌（Ace of Pentacles）', text: '近期有新的財富管道正在向你打開 — 可能是新工作、副業、合作邀請、或意外的金錢機會。錢幣王牌代表「種子降臨」，這次來敲門的機會，值得認真接住。重點不是它現在有多大，而是你願不願意把它種下、好好澆水。', tarotNote: '錢幣王牌象徵物質的新起點，宇宙今天遞給你一份禮物。' },
+      { title: '💵 鈔票 — 守住手上有的', tarotRef: '對應大阿爾卡納：錢幣四（Four of Pentacles）', text: '近期不是衝刺賺大錢的時候，而是守住既有的。財運偏穩，沒有大進大出，但要小心不要為了「賺更多」而冒不必要的險。也可以利用這段時間整理財務、檢視支出，把基本盤打穩。緊握的同時也要記得適度流動。', tarotNote: '錢幣四提醒你穩固比擴張重要，但握太緊反而會錯失機會。' },
+      { title: '📦 寶箱 — 累積的成果', tarotRef: '對應大阿爾卡納：錢幣九（Nine of Pentacles）', text: '你過去的努力正要開始有具體回報 — 之前種下的因，現在到了收成期。財運穩中有進，特別是來自你的專業 / 興趣 / 長期累積的領域。這段時間適合享受成果，也適合用這份豐盛投資自己（學新東西、買對的工具、體驗生活）。你值得這一切。', tarotNote: '錢幣九象徵獨立自足的豐盛，你已經有能力過你想要的日子。' },
+      { title: '🗝️ 鑰匙 — 慢工出細活', tarotRef: '對應宮廷牌：錢幣騎士（Knight of Pentacles）', text: '近期財運走「踏實型」路線 — 沒有暴富的火花，但每天都會穩穩往前走一步。適合做長線規劃、定期定額投資、學一個能養活你 5 年的技能。看似慢，但累積到後面會比衝得快的人遠很多。耐心是你今年最大的資產。', tarotNote: '錢幣騎士不華麗但可靠，慢就是快的真理。' },
+      { title: '🌱 錢樹 — 豐盛的源頭', tarotRef: '對應大阿爾卡納：錢幣十（Ten of Pentacles）', text: '你正走向「豐盛的循環」階段 — 不只是個人賺到錢，而是有能力讓財富在家人 / 重要的人之間流動，創造更大的安心感。可能是買房、家族投資、為下一代規劃。重點不是數字多大，而是你建立的東西能持續發芽、傳承下去。這是真正的富有。', tarotNote: '錢幣十象徵世代豐盛，你建立的不只給自己，是給愛你的人。' },
+    ],
+  },
+
+  crystal: {
+    tag: '💜 水晶占卜',
+    title: 'TA 現在對我的想法',
+    subtitle: '靜下心，讓直覺引導你選一顆水晶',
+    question: '閉上眼睛，深呼吸三次。\n睜開眼，選出最吸引你的那顆水晶 ✨',
+    cards: [
+      { img: '../images/crystal_amethyst.png', name: '紫水晶', bg: 'linear-gradient(160deg,#4a2080,#9b59b6)' },
+      { img: '../images/crystal_aquamarine.png', name: '海藍寶石', bg: 'linear-gradient(160deg,#1a4a6a,#3a9ad9)' },
+      { img: '../images/crystal_clear.png', name: '白水晶', bg: 'linear-gradient(160deg,#3a3060,#a0a0d0)' },
+      { img: '../images/crystal_smoky.png', name: '煙晶', bg: 'linear-gradient(160deg,#3a2010,#8a6040)' },
+      { img: '../images/crystal_rose.png', name: '粉晶', bg: 'linear-gradient(160deg,#6a2040,#d4709a)' },
+    ],
+    results: [
+      {
+        title: '紫水晶 — 第三眼開啟',
+        tarotRef: '對應大阿爾卡納：女祭司（The High Priestess）',
+        text: 'TA 目前對你有一種說不清楚的直覺連結。他們可能會想起你、夢到你，卻刻意不表達。內心其實有很多話想說，但理性在壓制情感。潛意識裡你佔據著一個特別的位置，只是時機還未到。',
+        tarotNote: '女祭司象徵潛意識與隱藏的情感，TA 現在像一本閉著的書，內頁卻寫滿了你的名字。',
+      },
+      {
+        title: '海藍寶石 — 流動的真心',
+        tarotRef: '對應大阿爾卡納：星星（The Star）',
+        text: 'TA 對你有真誠的好感與希望。他們覺得你是一個讓他們感到平靜的存在，不會感到壓力。目前的想法是正向的，甚至帶著一種柔和的期待——如果有機會，他們是願意更靠近你的。',
+        tarotNote: '星星牌代表希望與真實願望，TA 對你的感受像夜空中穩定閃爍的星，不炫目，但真實。',
+      },
+      {
+        title: '白水晶 — 清明如鏡',
+        tarotRef: '對應大阿爾卡納：審判（Judgement）',
+        text: 'TA 正在重新評估你們之間的關係。他們其實沒有你想的那麼複雜，對你沒有惡意，只是在認真思考你在他生命中的位置與意義。這是一個關鍵的自我覺察時刻，結果往往是正向的轉化。',
+        tarotNote: '審判牌象徵重新評估與新的開始，TA 正在做一個關於你的重要決定。',
+      },
+      {
+        title: '煙晶 — 迷霧中的守護',
+        tarotRef: '對應大阿爾卡納：隱士（The Hermit）',
+        text: 'TA 現在有點退縮，沉浸在自己的世界裡。對你的想法並非冷漠，而是他們本身正在走一段獨處的路。建議你不要過度追問，給彼此一些空間，內在整理好後，他們自然會重新走近你。',
+        tarotNote: '隱士牌代表向內探索的時期，TA 的沉默不是拒絕，而是需要時間找回自己的燈光。',
+      },
+      {
+        title: '粉晶 — 玫瑰色的心跳',
+        tarotRef: '對應大阿爾卡納：戀人（The Lovers）',
+        text: 'TA 現在對你有明確的好感！粉晶對應心輪，象徵開放的愛意。他們可能正在想要不要主動，心裡有一種甜蜜的猶豫。如果你也有意，現在是給一個小訊號的好時機——他們很可能會接住。',
+        tarotNote: '戀人牌象徵選擇與真實的心動，TA 的心輪已經為你打開了一道縫隙。',
+      },
+    ],
+  },
+
+  cat: {
+    tag: '🌸 貓咪占卜',
+    title: '近期感情走向',
+    subtitle: '貓咪有看穿人心的眼睛，選一隻讓你有緣分的貓',
+    question: '不要想太多，哪隻貓咪第一眼抓住你的心？\n直覺選擇，就是答案 🐾',
+    cards: [
+      { img: '../images/cat_orange.png', name: '橘貓', bg: 'linear-gradient(160deg,#8a4010,#f08030)' },
+      { img: '../images/cat_black.png', name: '黑貓', bg: 'linear-gradient(160deg,#1a1a2a,#4a3a6a)' },
+      { img: '../images/cat_tabby.png', name: '虎斑貓', bg: 'linear-gradient(160deg,#4a3010,#a07040)' },
+      { img: '../images/cat_white.png', name: '白貓', bg: 'linear-gradient(160deg,#3a3a5a,#9090c0)' },
+      { img: '../images/cat_gray.png', name: '灰貓', bg: 'linear-gradient(160deg,#2a2a3a,#6a7090)' },
+    ],
+    results: [
+      {
+        title: '橘貓 — 熱情與主動',
+        tarotRef: '對應大阿爾卡納：力量（Strength）',
+        text: '近期感情能量很旺！橘貓象徵熱情、主動與直接的表達。你或對方即將有一個大膽的行動，感情很可能在近期有明顯進展。如果你一直在等，現在是勇敢說出口的時機。',
+        tarotNote: '力量牌不只是蠻力，更是溫柔而堅定的勇氣——去愛，去表達，去主動靠近。',
+      },
+      {
+        title: '‍⬛ 黑貓 — 神秘的轉機',
+        tarotRef: '對應大阿爾卡納：命運之輪（Wheel of Fortune）',
+        text: '感情即將迎來一個意想不到的轉折。黑貓不代表壞兆頭，反而是神秘力量的介入——也許是一次偶然相遇、一條舊訊息，或一個讓你們重新靠近的機緣。保持開放的心，命運正在轉動。',
+        tarotNote: '命運之輪提醒你，感情的變化往往在你不期待的時候發生，準備好迎接它。',
+      },
+      {
+        title: '虎斑貓 — 穩定中的成長',
+        tarotRef: '對應大阿爾卡納：世界（The World）',
+        text: '近期感情走向穩定、踏實。虎斑貓象徵平衡與內在力量，你現在的狀態很好——不焦慮、不執著，這反而是吸引力最強的時刻。感情正在以自然的節奏推進，不需要強求，好事在來的路上。',
+        tarotNote: '世界牌象徵完整與圓滿，一段美好的感情正在以最適合你的方式抵達。',
+      },
+      {
+        title: '白貓 — 純淨的新開始',
+        tarotRef: '對應大阿爾卡納：愚者（The Fool）',
+        text: '白貓代表純粹與新的可能性。近期感情可能會出現一段全新的緣分，或是舊關係以嶄新的方式重啟。不要帶著過去的包袱，以輕盈的心態去面對即將出現的人事物，意外的驚喜就在轉角。',
+        tarotNote: '愚者牌是塔羅旅程的起點，代表勇敢踏出去，不帶恐懼地接受新的愛情冒險。',
+      },
+      {
+        title: '灰貓 — 靜待清晰',
+        tarotRef: '對應大阿爾卡納：月亮（The Moon）',
+        text: '現在的感情有一些模糊地帶，讓你看不清楚方向。灰貓教你的智慧是：不要急著做決定。目前局勢還未明朗，對方或你自己都在整理情緒。等待月圓之時，真相自然浮現，不要在迷霧中衝動行事。',
+        tarotNote: '月亮牌象徵幻象與直覺，感情中的模糊感是暫時的，真實的情況比你想像的更清晰。',
+      },
+    ],
+  },
+
+  moon: {
+    tag: '🌊 月相占卜',
+    title: '對方還有心嗎？',
+    subtitle: '月亮映照真實，選一個此刻最觸動你的月相',
+    question: '看著這五個月相，哪一個讓你有「就是它」的感覺？\n不要分析，相信你的第一感 🌙',
+    cards: [
+      { img: '../images/moon_new.png', name: '新月', bg: 'linear-gradient(160deg,#0a0a1a,#1a1a3a)' },
+      { img: '../images/moon_crescent.png', name: '眉月', bg: 'linear-gradient(160deg,#1a1a3a,#2a2a6a)' },
+      { img: '../images/moon_full.png', name: '滿月', bg: 'linear-gradient(160deg,#4a4a2a,#d4c870)' },
+      { img: '../images/moon_waning.png', name: '下弦月', bg: 'linear-gradient(160deg,#2a2040,#6a5090)' },
+      { img: '../images/moon_starry.png', name: '星空之月', bg: 'linear-gradient(160deg,#0a0a30,#1a1a60)' },
+    ],
+    results: [
+      {
+        title: '新月 — 種子埋於地下',
+        tarotRef: '對應宮廷牌：聖杯侍者（Page of Cups）',
+        text: '對方的心現在像新月一樣——不是消失，而是隱藏在黑暗中等待時機。他們的感情種子還在，但還沒到萌芽的時候。可能是因為時機不對、外部壓力，或是還在整理自己的感受。不要誤解沉默為無情。',
+        tarotNote: '聖杯侍者象徵情感的萌動與初始，對方的感情正在最脆弱、最需要被溫柔對待的階段。',
+      },
+      {
+        title: '眉月 — 微小卻真實',
+        tarotRef: '對應宮廷牌：聖杯騎士（Knight of Cups）',
+        text: '對方有心，但還很謹慎。就像眉月——光芒存在，只是還小。他們對你有好感，但可能因為害怕受傷或不確定你的心意，所以行動力有限。你的一個小小信號，可能就是讓月亮漸圓的關鍵。',
+        tarotNote: '聖杯騎士是浪漫但需要鼓勵的追求者，對方正在鼓起勇氣，等一個安全的訊號。',
+      },
+      {
+        title: '滿月 — 心意滿溢',
+        tarotRef: '對應大阿爾卡納：戀人（The Lovers）',
+        text: '對方是有心的！而且是很有心的那種。滿月代表感情能量到達頂點，對方現在對你的情感是飽滿而真實的。他們很可能在日常中常常想到你，只是在等一個更好的時機表達。',
+        tarotNote: '戀人牌代表心意已決的感情，對方心裡的月亮是為你而圓的。',
+      },
+      {
+        title: '下弦月 — 重新整理中',
+        tarotRef: '對應大阿爾卡納：正義（Justice）',
+        text: '對方正在做一個關於你們關係的內在審視。他們有感情，但同時也在客觀評估這段關係是否適合繼續。這不一定是壞事——下弦月後是新月，新的循環即將開始。給他們時間做出真實的選擇。',
+        tarotNote: '正義牌要求真實與平衡，對方正在做一個誠實的選擇，結果會反映真正的緣分。',
+      },
+      {
+        title: '星空之月 — 深邃如宇宙',
+        tarotRef: '對應大阿爾卡納：星星（The Star）',
+        text: '對方對你有一種深層的、難以言喻的牽掛。就像星空廣闊難以丈量，他們的感情也在心底深處靜靜閃爍。可能外表看起來平靜，但內心早就把你放在了一個很重要的位置。',
+        tarotNote: '星星牌象徵靈魂層次的連結，你們之間有一種超越普通的緣分在悄悄運作。',
+      },
+    ],
+  },
+
+  flower: {
+    tag: '🌱 花草占卜',
+    title: '這段關係的未來',
+    subtitle: '植物從不說謊，選一株與你產生共鳴的植物',
+    question: '讓眼睛放鬆，不帶目的地掃過這五株植物，\n哪一株讓你心裡有什麼感覺？ 🌿',
+    cards: [
+      { img: '../images/flower_rose.png', name: '玫瑰', bg: 'linear-gradient(160deg,#6a1020,#c03060)' },
+      { img: '../images/flower_sunflower.png', name: '向日葵', bg: 'linear-gradient(160deg,#5a4010,#d4a030)' },
+      { img: '../images/flower_mint.png', name: '薄荷', bg: 'linear-gradient(160deg,#1a3a1a,#4a9a4a)' },
+      { img: '../images/flower_sakura.png', name: '櫻花', bg: 'linear-gradient(160deg,#5a1a3a,#c06090)' },
+      { img: '../images/flower_clover.png', name: '四葉草', bg: 'linear-gradient(160deg,#1a4a1a,#3a8a4a)' },
+    ],
+    results: [
+      {
+        title: '玫瑰 — 有刺的熱烈',
+        tarotRef: '對應大阿爾卡納：力量（Strength）',
+        text: '這段關係的能量是熱烈且真實的，但玫瑰有刺提醒你：真愛需要兩人都有承受磨合的勇氣。未來不會一帆風順，但這段緣分值得你付出。愛不是不痛，是痛了還是想靠近。',
+        tarotNote: '力量牌的女性輕觸獅子，象徵以溫柔駕馭熱情——這段關係需要你展現內在的韌性。',
+      },
+      {
+        title: '向日葵 — 陽光面對陽光',
+        tarotRef: '對應大阿爾卡納：太陽（The Sun）',
+        text: '這段關係的未來是光明的！向日葵永遠面向光的方向，象徵這段緣分有真實的快樂基礎。你們在一起的能量是正向的、充滿活力的。不要因為小事遮住陽光，這段關係的底色是幸福的。',
+        tarotNote: '太陽牌是塔羅中最幸福的牌之一，象徵喜悅、成功與真實的愛情圓滿。',
+      },
+      {
+        title: '薄荷 — 清醒的緣分',
+        tarotRef: '對應大阿爾卡納：節制（Temperance）',
+        text: '薄荷清涼、提神，象徵這段關係需要清醒與平衡。未來的走向取決於你們能否真實溝通、不過度依賴也不過度疏離。這是一段需要用心經營的關係，細水長流比烈火更持久。',
+        tarotNote: '節制牌象徵平衡與融合，建議你以輕盈但認真的態度去澆灌這段緣分。',
+      },
+      {
+        title: '櫻花 — 短暫卻珍貴',
+        tarotRef: '對應大阿爾卡納：死神（Death·轉化）',
+        text: '這段關係像櫻花一樣，帶著一種「珍惜當下」的美麗。死神牌不代表壞事，而是「轉化」——這段緣分可能帶來重要的改變，讓你蛻變成更好的自己。無論結果如何，這段緣分都值得。',
+        tarotNote: '死神牌象徵結束即是新生，這段關係正在帶領你完成一段靈魂的功課。',
+      },
+      {
+        title: '四葉草 — 幸運在等你',
+        tarotRef: '對應大阿爾卡納：命運之輪（Wheel of Fortune）',
+        text: '你選到了幸運草！這段關係有一種特別的好運能量圍繞。未來會有出乎意料的好轉機，可能是一次久別重逢、一個雙方都沒想到的契機，讓你們的關係自然而然往更好的方向走。',
+        tarotNote: '命運之輪轉向幸運面，宇宙正在為你們的相遇排列最好的時機與條件。',
+      },
+    ],
+  },
+
+  fire: {
+    tag: '🔥 蠟燭占卜',
+    title: '近期整體運勢能量',
+    subtitle: '火焰有自己的語言，選一根感覺對的蠟燭',
+    question: '想像每根蠟燭都在你面前靜靜燃燒，\n哪一根蠟燭的能量讓你想停留？ 🕯️',
+    cards: [
+      { img: '../images/fire_white.png', name: '白蠟燭', bg: 'linear-gradient(160deg,#2a2a4a,#6a6aaa)' },
+      { img: '../images/fire_gold.png', name: '金蠟燭', bg: 'linear-gradient(160deg,#4a3a00,#c0a020)' },
+      { img: '../images/fire_red.png', name: '紅蠟燭', bg: 'linear-gradient(160deg,#4a0a0a,#c03020)' },
+      { img: '../images/fire_purple.png', name: '紫蠟燭', bg: 'linear-gradient(160deg,#2a0a4a,#8030c0)' },
+      { img: '../images/fire_green.png', name: '綠蠟燭', bg: 'linear-gradient(160deg,#0a3a0a,#20a040)' },
+    ],
+    results: [
+      {
+        title: '️ 白蠟燭 — 清明能量上升',
+        tarotRef: '對應大阿爾卡納：高塔（The Tower·清除）',
+        text: '白色代表淨化與重新開始。近期你的能量正在進行一個深層清理，也許會有一些舊的事情落幕，但這是為了更好的東西進來。不必恐慌，清除雜亂後，你的整體運勢會明顯上升。',
+        tarotNote: '高塔牌看似衝擊，實則是清除障礙的神聖時刻，讓不適合的離開，你才能迎接真正屬於你的。',
+      },
+      {
+        title: '金蠟燭 — 豐盛能量流入',
+        tarotRef: '對應大阿爾卡納：皇帝（The Emperor）',
+        text: '金色蠟燭象徵財富、成就與地位能量。近期你在事業、財運或自我展現上有很好的能量加持。這是一個適合主動出擊、展現實力的時機。自信是你最好的磁場，機會看見你了。',
+        tarotNote: '皇帝牌代表穩定的成功能量，你現在的氣場足以吸引你想要的資源與機會。',
+      },
+      {
+        title: '紅蠟燭 — 行動力大爆發',
+        tarotRef: '對應大阿爾卡納：戰車（The Chariot）',
+        text: '近期你的行動力與意志力非常強！紅色蠟燭點燃的是你內在的火，現在是衝刺、執行、把計畫落地的最佳時機。不要猶豫太久，你的能量支持你往前衝——方向對了，就全力以赴。',
+        tarotNote: '戰車牌象徵意志與勝利，你現在擁有突破一切阻礙的能量，用它！',
+      },
+      {
+        title: '紫蠟燭 — 靈性洞察增強',
+        tarotRef: '對應大阿爾卡納：女祭司（The High Priestess）',
+        text: '近期你的直覺力特別強，容易感受到周圍能量的變化。紫色是靈性與第三眼的顏色，建議你多留意夢境、直覺與內心的聲音。重要決策可以往內求，你自己已經知道答案了。',
+        tarotNote: '女祭司提醒你靈性感知是一種禮物，近期特別適合冥想、抽塔羅，或與自己對話。',
+      },
+      {
+        title: '綠蠟燭 — 療癒與再生',
+        tarotRef: '對應大阿爾卡納：星星（The Star）',
+        text: '近期你正在一個緩慢但深層的療癒過程中。綠色蠟燭象徵大地的再生力量，你的能量正在恢復，身心靈都在往更健康的狀態走。不要催促自己，給自己多一點溫柔，好事正在慢慢生長。',
+        tarotNote: '星星牌是療癒之牌，象徵在黑暗後找回希望的光，你的內在正在悄悄更新中。',
+      },
+    ],
+  },
+};
+
+let currentQuiz = null;
+
+function openQuiz(type) {
+  currentQuiz = type;
+  const q = QUIZZES[type];
+  document.getElementById('modalTag').textContent = q.tag;
+  document.getElementById('modalTag').style.color = getTagColor(type);
+  document.getElementById('modalTitle').textContent = q.title;
+  document.getElementById('modalSubtitle').textContent = q.subtitle;
+  document.getElementById('modalQuestion').textContent = q.question;
+  renderCards(q);
+  document.getElementById('resultBox').classList.remove('visible');
+  document.getElementById('modalOverlay').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function getTagColor(type) {
+  const map = { crystal:'#c4b5fd', cat:'#f8bbd9', moon:'#b8d4f0', flower:'#d4f0b8', fire:'#f5c080', wealth:'#ffd700', inner:'#d8c4f5', luckmoney:'#90d490' };
+  return map[type] || '#fff';
+}
+
+function renderCards(q) {
+  const row = document.getElementById('cardsRow');
+  row.innerHTML = '';
+  q.cards.forEach((c, i) => {
+    const div = document.createElement('div');
+    div.className = 'pick-card';
+    let styleStr = '';
+    if (c.img) {
+      styleStr = `background-image: url('${c.img}') !important;`;
+      if (c.filter) {
+        styleStr += ` filter: ${c.filter};`;
+      }
+    }
+    div.innerHTML = `
+      <div class="pick-card-face" style="${styleStr}">
+      </div>
+      <div class="pick-card-label">${c.name}</div>
+    `;
+    div.addEventListener('click', () => pickCard(i));
+    row.appendChild(div);
+  });
+}
+
+function pickCard(index) {
+  const cards = document.querySelectorAll('.pick-card');
+  cards.forEach((c,i) => c.classList.toggle('selected', i === index));
+
+  const q = QUIZZES[currentQuiz];
+  const r = q.results[index];
+  const c = q.cards[index];
+
+  document.getElementById('resultTitle').textContent = r.title;
+  document.getElementById('resultCardName').textContent = r.tarotRef;
+  document.getElementById('resultCardName').style.color = getTagColor(currentQuiz);
+  document.getElementById('resultText').textContent = r.text;
+  document.getElementById('resultTarotNote').textContent = '✦ 塔羅延伸解讀：' + r.tarotNote;
+
+  const box = document.getElementById('resultBox');
+  box.classList.remove('visible');
+  void box.offsetWidth;
+  box.classList.add('visible');
+  setTimeout(() => box.scrollIntoView({ behavior:'smooth', block:'nearest' }), 100);
+  if(window.scheduleAd) window.scheduleAd();
+}
+
+function resetPick() {
+  document.querySelectorAll('.pick-card').forEach(c => c.classList.remove('selected'));
+  document.getElementById('resultBox').classList.remove('visible');
+}
+
+function closeQuiz() {
+  document.getElementById('modalOverlay').classList.remove('active');
+  document.body.style.overflow = '';
+  currentQuiz = null;
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeQuiz();
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeQuiz(); });
+
+// === Filter & Search Logic ===
+let currentCategory = 'all';
+
+function setCategory(cat) {
+  currentCategory = cat;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  filterQuizzes();
+}
+
+function filterQuizzes() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.quiz-card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const title = card.querySelector('.quiz-card-title').textContent.toLowerCase();
+    const desc = card.querySelector('.quiz-card-desc').textContent.toLowerCase();
+    const tag = card.querySelector('.quiz-card-tag').textContent.toLowerCase();
+    const isLatest = card.dataset.latest === 'true';
+    const category = card.dataset.category;
+
+    let matchCat = false;
+    if (currentCategory === 'all') matchCat = true;
+    else if (currentCategory === 'latest') matchCat = isLatest;
+    else matchCat = (category === currentCategory);
+
+    let matchSearch = title.includes(query) || desc.includes(query) || tag.includes(query);
+
+    if (matchCat && matchSearch) {
+      card.style.display = 'block';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  const emptyState = document.getElementById('emptyState');
+  if (emptyState) {
+    if (visibleCount === 0) {
+      const titleEl = emptyState.querySelector('.empty-title');
+      const descEl = emptyState.querySelector('.empty-desc');
+      if (currentCategory === 'spiritual') {
+        titleEl.textContent = '✨ 自我探索類占卜持續更新中';
+        descEl.textContent = '我們正在為你準備更深入的自我探索占卜，敬請期待...';
+      } else if (query) {
+        titleEl.textContent = '🔍 沒有找到符合的占卜';
+        descEl.textContent = '試試其他關鍵字？';
+      } else {
+        titleEl.textContent = '✨ 此分類持續更新中';
+        descEl.textContent = '敬請期待更多有趣的占卜！';
+      }
+      emptyState.classList.add('visible');
+    } else {
+      emptyState.classList.remove('visible');
+    }
+  }
+}
+
+// === Share Logic ===
+function shareLine() {
+  if(!currentQuiz) return;
+  const q = QUIZZES[currentQuiz];
+  const url = window.location.href.split('#')[0];
+  const text = encodeURIComponent(`🔮 我剛剛在 姆姆塔羅 MUMU TAROU 測了「${q.title}」！\n快來試試：\n${url}`);
+  window.open(`https://line.me/R/msg/text/?${text}`, '_blank');
+}
+
+function shareThreads() {
+  if(!currentQuiz) return;
+  const q = QUIZZES[currentQuiz];
+  const url = window.location.href.split('#')[0];
+  const text = encodeURIComponent(`🔮 我剛剛在 姆姆塔羅 MUMU TAROU 測了「${q.title}」！\n你們也來測看看✨\n\n🔗 ${url}`);
+  window.open(`https://www.threads.net/intent/post?text=${text}`, '_blank');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    openQuiz('crystal');
+});
+
+</script>
+</body>
+</html>

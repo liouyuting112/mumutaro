@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="姆姆塔羅 MUMU TAROU 的每日運勢占卜 — 以韋特塔羅 78 張牌為基礎，每天為你抽出一張，包含愛情、事業、財運、幸運色與一句箴言。同一張牌有 8 種版本，天天不重複。">
+<meta name="keywords" content="姆姆塔羅, MUMU TAROU, mumutarou, 每日運勢, 每日塔羅, 今日運勢, 今日塔羅, 塔羅占卜, 大眾占卜, 免費塔羅, 線上塔羅, 韋特塔羅, 神秘學, 占卜">
+<meta property="og:title" content="🌙 每日運勢占卜 · 姆姆塔羅 MUMU TAROU">
+<meta property="og:description" content="🔮 78 張塔羅為你揭曉今日運勢，含愛情・事業・財運・幸運色 — 每張牌有 8 種版本，天天不重複。">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="姆姆塔羅 MUMU TAROU">
+<meta property="og:image" content="../images/banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="🌙 每日運勢占卜 · 姆姆塔羅 MUMU TAROU">
+<meta name="twitter:description" content="78 張塔羅為你揭曉今日運勢，含愛情・事業・財運・幸運色。">
+<meta name="theme-color" content="#2d1f3d">
+<link rel="canonical" href="https://mumutarou.com/daily.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "每日運勢占卜",
+  "isPartOf": { "@type": "WebSite", "name": "姆姆塔羅 MUMU TAROU" },
+  "description": "78 張塔羅為你揭曉今日運勢，含愛情、事業、財運、幸運色。",
+  "inLanguage": "zh-TW"
+}
+</script>
+<title>🌙 每日運勢占卜 · 姆姆塔羅 MUMU TAROU | 每日塔羅</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1018;
+    --parchment: #f5ede0;
+    --gold: #c9a84c;
+    --gold-light: #e8cc7a;
+    --rose: #b5697a;
+    --sage: #7a9e87;
+    --lavender: #8b7aad;
+    --deep: #2d1f3d;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: var(--deep);
+    color: var(--parchment);
+    font-family: 'Noto Serif TC', serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  /* Stars background */
+  .stars {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+      radial-gradient(ellipse at 20% 50%, rgba(139,122,173,0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 20%, rgba(181,105,122,0.12) 0%, transparent 40%),
+      radial-gradient(ellipse at 60% 80%, rgba(122,158,135,0.1) 0%, transparent 40%),
+      #1a1028;
+  }
+  .stars::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 40% 10%, rgba(255,255,255,0.8) 0%, transparent 100%),
+      radial-gradient(1px 1px at 70% 25%, rgba(255,255,255,0.5) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 80% 70%, rgba(255,255,255,0.7) 0%, transparent 100%),
+      radial-gradient(1px 1px at 35% 85%, rgba(255,255,255,0.5) 0%, transparent 100%);
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+  @keyframes twinkle { 0% { opacity: 0.7; } 100% { opacity: 1; } }
+
+  /* Top Nav */
+  .top-nav {
+    position: relative; z-index: 10;
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 32px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: rgba(10,5,20,0.4);
+    backdrop-filter: blur(8px);
+  }
+  .top-nav .logo {
+    font-family: 'Cinzel', serif; color: var(--gold-light);
+    font-size: 1.1rem; text-decoration: none; letter-spacing: 0.1em;
+  }
+  .top-nav-links { display: flex; gap: 12px; flex-wrap: wrap; }
+  .top-nav-links a {
+    color: rgba(245,237,224,0.85);
+    text-decoration: none;
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 30px;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+  }
+  .top-nav-links a:hover {
+    background: rgba(255,255,255,0.08);
+    border-color: rgba(255,255,255,0.5);
+  }
+
+  /* Main wrapper */
+  .page {
+    position: relative; z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 30px 16px 60px;
+  }
+
+  /* Hero */
+  .hero {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+  .hero-icon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 12px;
+    animation: float 6s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  .hero h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    color: var(--gold-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 8px;
+    text-shadow: 0 0 25px rgba(201,168,76,0.4);
+  }
+  .hero-date {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    color: rgba(245,237,224,0.65);
+    font-size: 1.05rem;
+    letter-spacing: 0.05em;
+  }
+
+  /* Pre-draw state */
+  .pre-draw {
+    text-align: center;
+    padding: 30px 20px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(8px);
+  }
+  .pre-draw-text {
+    color: rgba(245,237,224,0.85);
+    font-size: 1rem;
+    margin-bottom: 24px;
+    line-height: 1.9;
+  }
+  .pre-draw-text strong {
+    color: var(--gold-light);
+    font-weight: 600;
+  }
+
+  /* The card flip */
+  .card-stage {
+    perspective: 1500px;
+    width: 200px;
+    height: 320px;
+    margin: 0 auto 30px;
+    cursor: pointer;
+  }
+  .card-flipper {
+    position: relative;
+    width: 100%; height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  .card-stage.flipped .card-flipper {
+    transform: rotateY(180deg);
+  }
+  .card-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 14px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 14px 35px rgba(0,0,0,0.6);
+    border: 2px solid var(--gold);
+  }
+  .card-back-face {
+    background-image: url('../images/back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.3s;
+  }
+  .card-stage:hover .card-back-face {
+    box-shadow: 0 16px 45px rgba(201,168,76,0.4);
+  }
+  .card-stage:hover {
+    transform: translateY(-4px);
+  }
+  .card-front-face {
+    transform: rotateY(180deg);
+  }
+  .card-front-face::after {
+    content: '';
+    position: absolute; inset: 0;
+    border-radius: 14px;
+    box-shadow: 0 0 30px rgba(201,168,76,0.4) inset;
+  }
+  .card-hint {
+    text-align: center;
+    color: var(--gold-light);
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    margin-top: 16px;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    animation: pulse 2.4s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+  }
+
+  /* Result */
+  .result-section {
+    display: none;
+    margin-top: 28px;
+    animation: fadeUp 0.6s 0.6s ease both;
+  }
+  .result-section.active { display: block; }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .result-card-name {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+  .card-name-zh {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    color: var(--gold);
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+    text-shadow: 0 0 18px rgba(201,168,76,0.35);
+  }
+  .star-rating {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    letter-spacing: 5px;
+    text-shadow: 0 0 12px rgba(232,204,122,0.5);
+  }
+
+  .result-overall {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(139,122,173,0.08));
+    border: 1px solid rgba(201,168,76,0.3);
+    border-radius: 14px;
+    padding: 18px 18px;
+    margin-bottom: 18px;
+    text-align: center;
+    font-family: 'Crimson Text', serif;
+    font-size: 1.05rem;
+    color: var(--parchment);
+    line-height: 1.85;
+    box-shadow: 0 4px 18px rgba(201,168,76,0.1);
+  }
+  .result-overall .label {
+    display: block;
+    font-family: 'Cinzel', serif;
+    font-size: 0.78rem;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+  }
+
+  /* 6 格運勢儀表板 — 手機也維持 2 欄 */
+  .aspects-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .aspect-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 14px 14px 13px;
+    transition: transform 0.25s ease, border-color 0.25s ease;
+  }
+  .aspect-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(201,168,76,0.3);
+  }
+  .aspect-label {
+    font-family: 'Cinzel', serif;
+    font-size: 0.74rem;
+    color: var(--gold-light);
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .aspect-text {
+    font-size: 0.92rem;
+    color: rgba(245,237,224,0.88);
+    line-height: 1.6;
+  }
+
+  .lucky-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+  .lucky-card {
+    background: linear-gradient(135deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+    border: 1px solid rgba(201,168,76,0.28);
+    border-radius: 12px;
+    padding: 14px 12px;
+    text-align: center;
+  }
+  .lucky-label {
+    font-size: 0.72rem;
+    color: var(--gold-light);
+    letter-spacing: 0.15em;
+    margin-bottom: 6px;
+    font-family: 'Cinzel', serif;
+  }
+  .lucky-value {
+    font-size: 1.4rem;
+    color: var(--gold-light);
+    font-weight: 700;
+    text-shadow: 0 0 12px rgba(232,204,122,0.35);
+    letter-spacing: 1px;
+  }
+
+  .advice-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 22px;
+  }
+  .advice-card {
+    border-radius: 12px;
+    padding: 14px 14px;
+    text-align: center;
+    transition: transform 0.25s;
+  }
+  .advice-card:hover { transform: translateY(-2px); }
+  .advice-todo {
+    background: rgba(122,158,135,0.12);
+    border: 1px solid rgba(122,158,135,0.35);
+  }
+  .advice-avoid {
+    background: rgba(181,105,122,0.12);
+    border: 1px solid rgba(181,105,122,0.35);
+  }
+  .advice-label {
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 6px;
+    font-family: 'Cinzel', serif;
+  }
+  .advice-todo .advice-label { color: var(--sage); }
+  .advice-avoid .advice-label { color: var(--rose); }
+  .advice-text {
+    font-size: 0.95rem;
+    color: rgba(245,237,224,0.92);
+    line-height: 1.55;
+  }
+
+  .quote-block {
+    text-align: center;
+    padding: 24px 20px;
+    margin: 28px 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.1), rgba(139,122,173,0.1));
+    border-radius: 14px;
+    border: 1px solid rgba(201,168,76,0.2);
+  }
+  .quote-mark {
+    font-family: 'Cinzel', serif;
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+  }
+  .quote-text {
+    font-family: 'Crimson Text', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--gold-light);
+    line-height: 1.7;
+    letter-spacing: 0.03em;
+  }
+
+  /* Action footer */
+  .action-row {
+    display: flex; gap: 12px; flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  .btn-action {
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-family: 'Noto Serif TC', serif;
+    font-size: 0.92rem;
+    text-decoration: none;
+    transition: all 0.25s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-back {
+    background: transparent;
+    color: rgba(245,237,224,0.7);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .btn-back:hover { background: rgba(255,255,255,0.06); color: white; }
+  .btn-share-line {
+    background: #06C755; color: white;
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: bold;
+  }
+  .btn-share-line:hover { background: #05b34c; transform: translateY(-2px); }
+  .btn-share-threads {
+    background: #000; color: white;
+    border: 1px solid rgba(255,255,255,0.25);
+    display: inline-flex; align-items: center; gap: 6px;
+    font-weight: bold;
+  }
+  .btn-share-threads:hover { background: #111; }
+
+  /* Tomorrow notice */
+  .tomorrow-notice {
+    margin-top: 24px;
+    padding: 14px;
+    background: rgba(201,168,76,0.08);
+    border: 1px dashed rgba(201,168,76,0.3);
+    border-radius: 12px;
+    text-align: center;
+    font-size: 0.92rem;
+    color: rgba(245,237,224,0.7);
+  }
+  .btn-redraw {
+    background: none;
+    border: none;
+    color: var(--gold-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  .btn-redraw:hover { color: var(--gold); }
+
+  /* Result Banner / CTA */
+  .result-banner {
+    display: block;
+    margin: 24px 0 8px;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.3);
+    transition: transform 0.25s ease;
+  }
+  .result-banner img { width: 100%; display: block; }
+  .result-banner:hover { transform: translateY(-3px); }
+
+  .follow-cta {
+    margin-top: 16px;
+    padding: 14px;
+    border-radius: 12px;
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    text-align: center;
+    font-size: 0.92rem;
+  }
+  .follow-cta p { color: var(--gold-light); margin-bottom: 8px; font-size: 0.92rem; }
+  .follow-cta a {
+    display: inline-block;
+    max-width: 100%;
+    padding: 8px 18px;
+    border-radius: 22px;
+    background: linear-gradient(135deg, var(--gold), #a07830);
+    color: #1a1018 !important;
+    text-decoration: none;
+    font-weight: 700;
+    word-break: keep-all;
+    line-height: 1.5;
+    transition: all 0.25s;
+  }
+  .follow-cta a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(201,168,76,0.5);
+  }
+  @media (max-width: 480px) {
+    .follow-cta { padding: 12px 10px; }
+    .follow-cta p { font-size: 0.85rem; }
+    .follow-cta a { font-size: 0.88rem; padding: 8px 14px; }
+  }
+
+  /* Ad popup styles */
+  #ad-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8); backdrop-filter: blur(5px);
+    z-index: 9999; display: flex; align-items: center; justify-content: center;
+  }
+  .ad-container {
+    background: #1a1018; border: 2px solid var(--gold); border-radius: 16px;
+    width: 90%; max-width: 320px; overflow: hidden; position: relative;
+    box-shadow: 0 10px 40px rgba(201,168,76,0.3);
+    animation: popupFadeIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+  @keyframes popupFadeIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  .ad-header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 10px 16px; background: rgba(201,168,76,0.15);
+    color: var(--gold-light); font-size: 0.85rem; letter-spacing: 0.1em;
+  }
+  #ad-close {
+    background: transparent; border: none; color: var(--gold-light); font-size: 1.5rem;
+    cursor: pointer; line-height: 1;
+  }
+  .ad-content-wrap a { text-decoration: none; display: block; }
+  .ad-content-wrap img { width: 100%; display: block; }
+  .ad-desc {
+    padding: 12px 16px; color: var(--parchment); font-size: 0.95rem; text-align: center;
+  }
+  .ad-footer {
+    text-align: center; padding: 8px; font-size: 0.75rem; color: rgba(255,255,255,0.4);
+    border-top: 1px solid rgba(255,255,255,0.05);
+  }
+
+  @media(max-width:480px) {
+    .top-nav { flex-direction: column; gap: 12px; padding: 14px; }
+    .card-stage { width: 170px; height: 270px; }
+    .lucky-row, .advice-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stars"></div>
+
+<nav class="top-nav">
+  <a href="divination.html" class="logo">姆姆塔羅 MUMU TAROU</a>
+  <div class="top-nav-links">
+    <a href="divination.html">← 大眾占卜首頁</a>
+  </div>
+</nav>
+
+<main class="page">
+
+  <header class="hero">
+    <span class="hero-icon">🌙</span>
+    <h1>每日運勢占卜</h1>
+    <p class="hero-date" id="todayDate"></p>
+  </header>
+
+  <!-- Pre-draw state -->
+  <div class="pre-draw" id="preDraw">
+    <p class="pre-draw-text">
+      靜下心，深呼吸三次，<br>
+      在心中默念<strong>「今天我需要什麼指引？」</strong><br>
+      然後點擊下方的牌。
+    </p>
+
+    <div class="card-stage" id="cardStage" onclick="drawCard()">
+      <div class="card-flipper" id="cardFlipper">
+        <div class="card-face card-back-face"></div>
+        <div class="card-face card-front-face" id="cardFrontFace"></div>
+      </div>
+    </div>
+    <p class="card-hint" id="cardHint">✨ 點擊牌面，開啟今日運勢 ✨</p>
+  </div>
+
+  <!-- Result -->
+  <section class="result-section" id="resultSection">
+    <div class="result-card-name">
+      <div class="card-name-zh" id="cardNameZh"></div>
+      <div class="star-rating" id="starRating"></div>
+    </div>
+
+    <div class="result-overall">
+      <span class="label">✦ 今日整體運勢 ✦</span>
+      <div id="overallText"></div>
+    </div>
+
+    <div class="aspects-grid">
+      <div class="aspect-card">
+        <div class="aspect-label">💕 愛情</div>
+        <div class="aspect-text" id="loveText"></div>
+      </div>
+      <div class="aspect-card">
+        <div class="aspect-label">💼 事業</div>
+        <div class="aspect-text" id="workText"></div>
+      </div>
+      <div class="aspect-card">
+        <div class="aspect-label">💰 財運</div>
+        <div class="aspect-text" id="moneyText"></div>
+      </div>
+      <div class="aspect-card">
+        <div class="aspect-label">🍀 幸運色</div>
+        <div class="aspect-text" id="colorText"></div>
+      </div>
+    </div>
+
+    <div class="lucky-row">
+      <div class="lucky-card">
+        <div class="lucky-label">🎲 幸運數字</div>
+        <div class="lucky-value" id="luckyNum"></div>
+      </div>
+      <div class="lucky-card">
+        <div class="lucky-label">⭐ 幸運指數</div>
+        <div class="lucky-value" id="luckyScore"></div>
+      </div>
+    </div>
+
+    <div class="advice-row">
+      <div class="advice-card advice-todo">
+        <div class="advice-label">✓ 今日宜</div>
+        <div class="advice-text" id="todoText"></div>
+      </div>
+      <div class="advice-card advice-avoid">
+        <div class="advice-label">✕ 今日忌</div>
+        <div class="advice-text" id="avoidText"></div>
+      </div>
+    </div>
+
+    <div class="quote-block">
+      <div class="quote-mark">❝</div>
+      <div class="quote-text" id="quoteText"></div>
+    </div>
+
+    <a href="javascript:void(0)" onclick="if(window.getAdUrl) window.open(window.getAdUrl('daily_banner'), '_blank')" class="result-banner">
+      <img src="../images/banner.png" alt="玩星派對">
+    </a>
+
+    <div class="follow-cta">
+      <p>✦ 想要更詳細的解讀？ ✦</p>
+      <a href="https://tarot-reading.mixytalk.com/?utm_source=DailyFortune&utm_medium=display&utm_campaign=mega_traffic_2026&utm_content=result_cta" target="_blank" rel="noopener noreferrer">🔮 詳細問題：線上免費解牌 →</a>
+    </div>
+
+    <div class="tomorrow-notice">
+      🌙 同一張牌會陪伴你一整天，<button class="btn-redraw" onclick="redrawConfirm()">想重新抽？</button>
+    </div>
+
+    <div class="action-row">
+      <a href="divination.html" class="btn-action btn-back">← 回大眾占卜</a>
+      <button class="btn-action btn-share-line" onclick="shareLine()">💬 分享 LINE</button>
+      <button class="btn-action btn-share-threads" onclick="shareThreads()">🧵 分享 Threads</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="daily-fortunes.js"></script>
+<script>
+/* Ad System Logic */
+(function() {
+  const AD_CONFIG = {
+    utmSource: 'DailyFortune',
+    utmCampaign: 'mega_traffic_2026',
+    initDelay: 2000, cooldown: 20000,
+    ads: [{ url: 'https://www.gametower.com.tw/Action/partygo/mixytalk0416/index.html', img: '../images/ad_starparty.png' }]
+  };
+  window.getAdUrl = function(utmContent) {
+    const ad = AD_CONFIG.ads[0];
+    const sep = ad.url.indexOf('?') === -1 ? '?' : '&';
+    return ad.url + sep + 'utm_source=' + AD_CONFIG.utmSource + '&utm_medium=display&utm_campaign=' + AD_CONFIG.utmCampaign + '&utm_content=' + (utmContent || '1st_banner');
+  };
+  window.scheduleAd = function() {
+    const now = Date.now();
+    const last = parseInt(sessionStorage.getItem('last_ad_time') || '0');
+    if (now - last < AD_CONFIG.cooldown) return;
+    if (document.getElementById('ad-overlay')) return;
+    setTimeout(showAd, AD_CONFIG.initDelay);
+  };
+  function showAd() {
+    sessionStorage.setItem('last_ad_time', Date.now().toString());
+    const ad = AD_CONFIG.ads[0];
+    const overlay = document.createElement('div');
+    overlay.id = 'ad-overlay';
+    overlay.innerHTML = `
+      <div class="ad-container">
+        <div class="ad-header"><span>🎁 玩星派對</span><button id="ad-close">×</button></div>
+        <div class="ad-content-wrap">
+          <a href="${window.getAdUrl('popup_banner')}" target="_blank">
+            <img src="${ad.img}" alt="玩星派對">
+            <div class="ad-desc">iPhone買不到？完成電話驗證 等你免費抽回家</div>
+          </a>
+        </div>
+        <div class="ad-footer">點擊右上角 × 關閉</div>
+      </div>`;
+    document.body.appendChild(overlay);
+    document.getElementById('ad-close').onclick = () => overlay.remove();
+    overlay.onclick = (e) => { if(e.target===overlay) overlay.remove(); };
+  }
+})();
+
+// ── Daily fortune logic ──
+const STORAGE_KEY = 'daily_tarot_card';
+
+document.getElementById('todayDate').textContent = getTodayString();
+
+// 取得使用者種子（首次拜訪建立）
+function getUserSeed() {
+  let seed = localStorage.getItem('mystic_user_seed');
+  if (!seed) {
+    seed = Math.random().toString(36).substring(2, 12);
+    localStorage.setItem('mystic_user_seed', seed);
+  }
+  return seed;
+}
+
+// 看今天有沒有抽過 — 回傳 {id, variation} 或 null
+function getTodaysDraw() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (data.date !== getTodayString()) return null;
+    return { id: data.id, variation: data.variation };
+  } catch (e) { return null; }
+}
+
+function saveTodaysDraw(id, variation) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify({
+    date: getTodayString(),
+    id: id,
+    variation: variation
+  }));
+}
+
+function drawCard() {
+  const existing = getTodaysDraw();
+  let cardId, varIdx;
+  if (existing !== null) {
+    cardId = existing.id;
+    varIdx = existing.variation;
+  } else {
+    const seed = getUserSeed();
+    cardId = getDailyCard(seed);
+    const totalVars = DAILY_FORTUNES[cardId].variations.length;
+    varIdx = getDailyVariation(cardId, seed) % totalVars;
+    saveTodaysDraw(cardId, varIdx);
+  }
+  showResult(cardId, varIdx);
+}
+
+function showResult(id, variationIdx) {
+  const card = DAILY_FORTUNES[id];
+  if (!card) return;
+  const fortune = card.variations[variationIdx % card.variations.length];
+
+  // 翻牌動畫
+  const stage = document.getElementById('cardStage');
+  const front = document.getElementById('cardFrontFace');
+  front.style.backgroundImage = `url('../images/card_${id}.jpg')`;
+
+  stage.classList.add('flipped');
+  document.getElementById('cardHint').style.display = 'none';
+
+  setTimeout(() => {
+    document.getElementById('cardNameZh').textContent = card.name;
+    document.getElementById('starRating').textContent = getStarRating(fortune.rating);
+    document.getElementById('overallText').textContent = fortune.overall;
+    document.getElementById('loveText').textContent = fortune.love;
+    document.getElementById('workText').textContent = fortune.work;
+    document.getElementById('moneyText').textContent = fortune.money;
+    document.getElementById('colorText').textContent = fortune.color;
+    document.getElementById('luckyNum').textContent = fortune.num;
+    document.getElementById('luckyScore').textContent = fortune.rating + '/5';
+    document.getElementById('todoText').textContent = fortune.todo;
+    document.getElementById('avoidText').textContent = fortune.avoid;
+    document.getElementById('quoteText').textContent = fortune.quote;
+
+    document.getElementById('resultSection').classList.add('active');
+    setTimeout(() => {
+      document.getElementById('resultSection').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (window.scheduleAd) window.scheduleAd();
+    }, 300);
+  }, 700);
+}
+
+function redrawConfirm() {
+  if (confirm('🌙 今日運勢已固定為這張牌。\n強行重抽會打亂今天的訊息，確定要重抽嗎？')) {
+    // 真正隨機：抽不同的牌、不同的 variation
+    const current = getTodaysDraw();
+    const currentId = current ? current.id : -1;
+    let newId;
+    do {
+      newId = Math.floor(Math.random() * 78);
+    } while (newId === currentId);
+    const totalVars = DAILY_FORTUNES[newId].variations.length;
+    const newVar = Math.floor(Math.random() * totalVars);
+    saveTodaysDraw(newId, newVar);
+    location.reload();
+  }
+}
+
+function shareLine() {
+  const draw = getTodaysDraw();
+  if (!draw) return;
+  const card = DAILY_FORTUNES[draw.id];
+  const f = card.variations[draw.variation % card.variations.length];
+  const url = window.location.href.split('?')[0].split('#')[0];
+  const text = encodeURIComponent(`🌙 我的今日塔羅是「${card.name}」⭐ ${f.rating}/5\n${f.overall}\n\n你也來抽一張：\n${url}`);
+  window.open(`https://line.me/R/msg/text/?${text}`, '_blank');
+}
+
+function shareThreads() {
+  const draw = getTodaysDraw();
+  if (!draw) return;
+  const card = DAILY_FORTUNES[draw.id];
+  const f = card.variations[draw.variation % card.variations.length];
+  const url = window.location.href.split('?')[0].split('#')[0];
+  const text = encodeURIComponent(`🌙 我的今日塔羅是「${card.name}」⭐ ${f.rating}/5\n「${f.quote}」\n\n你的呢？\n🔗 ${url}`);
+  window.open(`https://www.threads.net/intent/post?text=${text}`, '_blank');
+}
+
+// 進站如果已抽過，直接顯示
+window.addEventListener('DOMContentLoaded', () => {
+  const existing = getTodaysDraw();
+  if (existing !== null) {
+    setTimeout(() => drawCard(), 200);
+  }
+});
+</script>
+</body>
+</html>
