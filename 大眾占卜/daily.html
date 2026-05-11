@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 <meta property="og:description" content="🔮 78 張塔羅為你揭曉今日運勢，含愛情・事業・財運・幸運色 — 每張牌有 8 種版本，天天不重複。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="姆姆塔羅 MUMU TAROU">
-<meta property="og:image" content="../images/banner.png">
+<meta property="og:image" content="images/banner.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="🌙 每日運勢占卜 · 姆姆塔羅 MUMU TAROU">
 <meta name="twitter:description" content="78 張塔羅為你揭曉今日運勢，含愛情・事業・財運・幸運色。">
@@ -186,7 +186,7 @@
     border: 2px solid var(--gold);
   }
   .card-back-face {
-    background-image: url('../images/back.jpg');
+    background-image: url('images/back.jpg');
     background-size: cover;
     background-position: center;
     transition: transform 0.3s;
@@ -635,7 +635,7 @@
     </div>
 
     <a href="javascript:void(0)" onclick="if(window.getAdUrl) window.open(window.getAdUrl('daily_banner'), '_blank')" class="result-banner">
-      <img src="../images/banner.png" alt="玩星派對">
+      <img src="images/banner.png" alt="玩星派對">
     </a>
 
     <div class="follow-cta">
@@ -664,7 +664,7 @@
     utmSource: 'DailyFortune',
     utmCampaign: 'mega_traffic_2026',
     initDelay: 2000, cooldown: 20000,
-    ads: [{ url: 'https://www.gametower.com.tw/Action/partygo/mixytalk0416/index.html', img: '../images/ad_starparty.png' }]
+    ads: [{ url: 'https://www.gametower.com.tw/Action/partygo/mixytalk0416/index.html', img: 'images/ad_starparty.png' }]
   };
   window.getAdUrl = function(utmContent) {
     const ad = AD_CONFIG.ads[0];
@@ -758,7 +758,7 @@ function showResult(id, variationIdx) {
   // 翻牌動畫
   const stage = document.getElementById('cardStage');
   const front = document.getElementById('cardFrontFace');
-  front.style.backgroundImage = `url('../images/card_${id}.jpg')`;
+  front.style.backgroundImage = `url('images/card_${id}.jpg')`;
 
   stage.classList.add('flipped');
   document.getElementById('cardHint').style.display = 'none';
@@ -831,3 +831,4 @@ window.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
