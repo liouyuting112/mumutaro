@@ -1,6 +1,13 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-TW">
 <head>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SL4XJ6V');</script>
+<!-- End Google Tag Manager -->
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="姆姆塔羅 MUMU TAROU 的每日運勢占卜 — 以韋特塔羅 78 張牌為基礎，每天為你抽出一張，包含愛情、事業、財運、幸運色與一句箴言。同一張牌有 8 種版本，天天不重複。">
@@ -541,6 +548,10 @@
 </style>
 </head>
 <body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5SL4XJ6V"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <div class="stars"></div>
 
@@ -554,6 +565,13 @@
 <main class="page">
 
   <header class="hero">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-5SL4XJ6V');</script>
+<!-- End Google Tag Manager -->
     <span class="hero-icon">🌙</span>
     <h1>每日運勢占卜</h1>
     <p class="hero-date" id="todayDate"></p>
@@ -829,6 +847,18 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
-</body>
+<!-- Custom event sender for GTM -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.sendGAS = function(eventLabel) {
+    window.dataLayer.push({
+      'event': 'quiz_interaction',
+      'event_category': 'quiz',
+      'event_label': eventLabel,
+      'tool_name': 'mumutaro_daily_fortune'
+    });
+  };
+</script></body>
 </html>
+
 
